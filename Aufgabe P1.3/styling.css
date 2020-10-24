@@ -1,4 +1,21 @@
 p{
-    color:green;
+    color:white;
     font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+    text-align: center;
+}
+#nudes-link{
+    width: 10px;
+    border:5 px solid white;
+    padding: 3px;
+    margin:2px;
+    text-transform: capitalize;
+}
+#zitatgestaltung{ 
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+
 }
