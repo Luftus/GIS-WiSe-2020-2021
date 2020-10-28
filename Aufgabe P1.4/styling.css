@@ -1,0 +1,42 @@
+p{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+#nudes-link{
+    background-color: darkred;
+    width: 10px;
+    border:5 px solid white;
+    padding: 3px;
+    margin:2px;
+    text-transform: capitalize;
+}
+#zitatgestaltung{ 
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+
+}
+.ueberschrift-gestaltung{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+.hobby-gestaltung{
+    text-align: center;
+    color:purple;
+    border-style: dotted;
+}
+.navigations-gestaltung{
+    text-align:right;
+    position: relative;
+    color:white;
+    position:fixed;
+    top: 0;
+    right: 0;
+
+}
