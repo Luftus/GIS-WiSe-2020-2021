@@ -6,6 +6,7 @@ body{
     background-color: black;
     text-align: center;
     padding: 20px;
+    background-image:url(Jester.png);
 }
 #nudes-link{
     background-color: darkred;
@@ -31,6 +32,7 @@ body{
     color:purple;
     border-style: dotted;
 }
+
 .navigations-gestaltung{
     text-align:right;
     position: relative;
@@ -38,5 +40,9 @@ body{
     position:fixed;
     top: 0;
     right: 0;
+}
+div a:hover{
+    color:green;
+    font-family: Papyrus;
 
 }
