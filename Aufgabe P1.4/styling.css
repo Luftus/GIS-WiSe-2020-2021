@@ -6,7 +6,8 @@ body{
     background-color: black;
     text-align: center;
     padding: 20px;
-    background-image:url(Jester.png);
+    background-image:url(double-bubble-dark.png);
+    background-repeat:repeat;
 }
 #nudes-link{
     background-color: darkred;
@@ -34,15 +35,60 @@ body{
 }
 
 .navigations-gestaltung{
+    font-size: 20px;
     text-align:right;
-    position: relative;
-    color:white;
     position:fixed;
     top: 0;
     right: 0;
 }
+
 div a:hover{
     color:green;
     font-family: Papyrus;
-
 }
+nav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ a:link{
+    color:yellow;
+}
+section>p{
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    width:600px;
+}
+
+@keyframes h2text {
+  10%   {background-color:red; }
+  20%  {background-color:yellow; }
+  30%  {background-color:blue }
+  40%  {background-color:green;}
+  50% {background-color:purple}
+  60% {background-color:black}
+  70% {background-color:pink}
+  80% {background-color:orange}
+  90% {background-color:grey}
+  100% {background-color:red}
+  }
+h2+p{
+    animation-name:h2text;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes runningheadline{
+    0% { left: 0;}
+    50%{ left : 100%;}
+    100%{ left: 0;}
+}
+
+h1[target="_animation"]{
+    animation-name:runningheadline;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+
