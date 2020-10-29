@@ -16,25 +16,41 @@ body{
     padding: 3px;
     margin:2px;
     text-transform: capitalize;
+    font-size: 30px;
 }
 #zitatgestaltung{ 
     color:white;
     font-family:Arial, Helvetica, sans-serif;
     text-decoration: underline;
+    position:fixed;
+    bottom:0 ;
+    right: 0;
+    width: 300px;
+    border: 5px white;
 
 }
 .ueberschrift-gestaltung{
+    font-size: 50px;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
+   
 }
+
+
 .hobby-gestaltung{
     text-align: center;
     color:purple;
     border-style: dotted;
+    border-width:5px;
+    display:inline;
+    font-size:35px;  
 }
 
+
 .navigations-gestaltung{
+    border: 4px outset white;
+    border-radius: 40px 40px 40px 40px;
     font-size: 20px;
     text-align:right;
     position:fixed;
@@ -50,9 +66,6 @@ nav a {
     color: white;
     padding: 14px 16px;
     text-decoration: none;
-}
- a:link{
-    color:yellow;
 }
 section>p{
     text-align:center;
@@ -84,11 +97,52 @@ h2+p{
     100%{ left: 0;}
 }
 
-h1[target="_animation"]{
+h4+p{
     animation-name:runningheadline;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
+h3~#facebook-icon{
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  border-color: white;
+}
+
+.Kontaktformular {
+    padding: 16px;
+  }
+
+  input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  hr {
+    border: 5px white ;
+    margin-bottom: 25px;
+  }
+  .abschickenbtn {
+    background-color:purple;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 50%;
+  }
+  .abschickenbtn:hover {
+    color:red;
+  }
+  
+
+
+
 
 
 

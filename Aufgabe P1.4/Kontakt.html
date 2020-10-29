@@ -5,6 +5,8 @@
         <meta charset="utf-8">  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styling.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
@@ -24,15 +26,36 @@
          </section>
          <section> 
         <h3 class="ueberschrift-gestaltung">Facebook</h3>
-        <a href="https://www.facebook.com/eric.luft.9/">Hier geht es zu meiner Facebook Seite</a>
+        <a  id="facebook-icon" href="https://www.facebook.com/eric.luft.9/" class="fa fa-facebook"></a>
         </section>
         <section> 
         <h4 class="ueberschrift-gestaltung" >Discord und Handynummer</h4>
-        <p>Discord Nummer:#8766 Handynummer:0176 60143339</p>
+        <p>Discord Nummer:#8766 </p>
+        <p> Handynummer:0176 60143339</p>
     </section>
+        <form action="action_page.php">
+            <div class="Kontaktformular">
+            <h5 class="ueberschrift-gestaltung">Möchtest du dich bei mir melden?</h5>
+              <p>Füll einfach die Kriterien aus das ich dir auch antworte.</p>
+              <hr>
+              <label for="vorname"><b>Vorname</b></label>
+              <input type="text" placeholder="Dein Vorname" name="vorname" id="vorname" required>
+        
+              <label for="nachname"><b>Nachname</b></label>
+              <input type="text" placeholder="Dein Nachname" name="nachname" id="nachname" required>
+
+              <label for="nachname"><b>Nachricht</b></label>
+              <input type="text" placeholder="Was möchtest du mir mitteilen?" name="nachricht" id="nachricht" required>
+
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Deine E-mail" name="email" id="email" required>
+              <p> Mit dem Zuschicken deiner Nachricht versichert du das du Copyright blablabla einhältst und Daten</p>
+              <button type="abschicken" class="abschickenbtn">abschicken</button>
+              <hr>
+    </div>
     </main>
     <footer>
-        <cite id="zitatgestaltung">It just works~ Todd Howard</cite>
+        <cite id="zitatgestaltung">It just works~ Todd Howard <i class="fas fa-cat"></i></cite>
     </footer>
     </body>
 
