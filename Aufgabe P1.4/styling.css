@@ -87,9 +87,24 @@ section>p{
   100% {background-color:red}
   }
 h2+p{
-    animation-name:h2text;
+  text-align: center;
+  width:50%;
+  padding:30px;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name:h2text;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+}
+h3+p{
+  width:50%;
+  padding:30px;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name:h2text;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
 }
 @keyframes runningheadline{
     0% { left: 0;}
@@ -139,8 +154,20 @@ h3~#facebook-icon{
   .abschickenbtn:hover {
     color:red;
   }
-  
 
+  @media screen and (max-width:1024px){
+    .flexbox-row{
+      flex-direction:row;
+    }
+  }
+    @media screen and (max-width:600px){
+      .flexbox-column{
+        flex-direction:column;
+      }
+    }
+  
+  
+  
 
 
 
