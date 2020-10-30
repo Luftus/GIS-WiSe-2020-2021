@@ -154,14 +154,17 @@ h3~#facebook-icon{
   .abschickenbtn:hover {
     color:red;
   }
-
+.flexbox-row{
+  display:flex;
+  flex-direction:row;
+}
   @media screen and (max-width:1024px){
     .flexbox-row{
       flex-direction:row;
     }
   }
     @media screen and (max-width:600px){
-      .flexbox-column{
+      .flexbox-column,.flexbox-row{
         flex-direction:column;
       }
     }
