@@ -117,14 +117,14 @@ h4+p{
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
-h3~#facebook-icon{
+#facebook-icon{
   padding: 20px;
   font-size: 30px;
   width: 30px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-  border-color: white;
+  
 }
 
 .Kontaktformular {
@@ -167,6 +167,10 @@ h3~#facebook-icon{
       .flexbox-column,.flexbox-row{
         flex-direction:column;
       }
+    }
+
+    a[class="aktuelleSeite"]{
+      color:yellow;
     }
   
   
