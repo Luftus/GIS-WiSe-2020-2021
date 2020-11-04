@@ -174,10 +174,10 @@ h4+p{
   }
     @media screen and (max-width:600px){
       .flexbox-column,.flexbox-row{
-        flex-direction:row;
+        flex-direction:row-reverse;
       }
     }
-    
+
     a[class="aktuelleSeite"]{
       color:yellow;
     }
