@@ -5,18 +5,18 @@ p{
 body{
     background-color: black;
     text-align: center;
-    padding: 20px;
+    padding: 1.563em;
     background-image:url(double-bubble-dark.png);
     background-repeat:repeat;
 }
 #nudes-link{
     background-color: darkred;
-    width: 10px;
-    border:5 px solid white;
-    padding: 3px;
-    margin:2px;
+    width: 0.625em;
+    border:0.313em solid white;
+    padding: 0.313em;
+    margin:0.313em;
     text-transform: capitalize;
-    font-size: 30px;
+    font-size: 1.563em;
 }
 #zitatgestaltung{ 
     color:white;
@@ -25,33 +25,34 @@ body{
     position:fixed;
     bottom:0 ;
     right: 0;
-    width: 300px;
-    border: 5px white;
+    width: 18.75em;
+    border: 0.313em white;
 
 }
 .ueberschrift-gestaltung{
-    font-size: 50px;
+    font-size: 3.125em;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 0.125em;
    
 }
+
 
 
 .hobby-gestaltung{
     text-align: center;
     color:purple;
     border-style: dotted;
-    border-width:5px;
+    border-width:0.313em;
     display:inline;
-    font-size:35px;  
+    font-size:2.188em;  
 }
 
 
 .navigations-gestaltung{
-    border: 4px outset white;
-    border-radius: 40px 40px 40px 40px;
-    font-size: 20px;
+    border: 0.25em outset white;
+    border-radius: 2.5em;
+    font-size: 1.25em;
     text-align:right;
     position:fixed;
     top: 0;
@@ -64,14 +65,14 @@ div a:hover{
 }
 nav a {
     color: white;
-    padding: 14px 16px;
+    padding: 0.875em 1em;
     text-decoration: none;
 }
 section>p{
     text-align:center;
     margin-left: auto;
     margin-right: auto;
-    width:600px;
+    width:37.5em;
 }
 
 @keyframes h2text {
@@ -89,7 +90,7 @@ section>p{
 h2+p{
   text-align: center;
   width:50%;
-  padding:30px;
+  padding:1.875em;
   margin-left: auto;
   margin-right: auto;
   animation-name:h2text;
@@ -98,7 +99,7 @@ h2+p{
 }
 h3+p{
   width:50%;
-  padding:30px;
+  padding:1.875em;
   margin-left: auto;
   margin-right: auto;
   animation-name:h2text;
@@ -118,9 +119,9 @@ h4+p{
     animation-iteration-count: infinite;
 }
 #facebook-icon{
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
+  padding: 1.25em;
+  font-size:1.875em;
+  width: 1.875em;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
@@ -128,26 +129,26 @@ h4+p{
 }
 
 .Kontaktformular {
-    padding: 16px;
+    padding: 1em;
   }
 
   input[type=text]{
     width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+    padding:0.625;
+    margin: 0.313em 0 1.375em 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
   }
   hr {
-    border: 5px white ;
-    margin-bottom: 25px;
+    border: 0.313em white ;
+    margin-bottom: 1.563em;
   }
   .abschickenbtn {
     background-color:purple;
     color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
+    padding: 1em 1.25em;
+    margin: 0.5em 0;
     border: none;
     width: 50%;
   }
