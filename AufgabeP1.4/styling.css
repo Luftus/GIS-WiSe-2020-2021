@@ -154,6 +154,10 @@ h4+p{
   .abschickenbtn:hover {
     color:red;
   }
+  .picture{
+    width:100%;
+  }
+
 .flexbox-row{
   display:flex;
   flex-direction:row;
@@ -171,11 +175,7 @@ h4+p{
     a[class="aktuelleSeite"]{
       color:yellow;
     }
-    .picture{
-      width:100%;
-
-    }
-  
+    
   
   
 
