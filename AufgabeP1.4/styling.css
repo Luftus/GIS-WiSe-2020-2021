@@ -168,11 +168,9 @@ h4+p{
         flex-direction:column;
       }
     }
-
     a[class="aktuelleSeite"]{
       color:yellow;
     }
-
     #picture{
       width:100%;
 
