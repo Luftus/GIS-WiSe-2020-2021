@@ -177,6 +177,7 @@ h4+p{
         flex-direction:row;
       }
     }
+    
     a[class="aktuelleSeite"]{
       color:yellow;
     }
