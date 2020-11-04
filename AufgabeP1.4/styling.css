@@ -37,8 +37,6 @@ body{
    
 }
 
-
-
 .hobby-gestaltung{
     text-align: center;
     color:purple;
@@ -167,7 +165,7 @@ h4+p{
 
 .flexbox-row{
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
 }
   @media screen and (max-width:1024px){
     .flexbox-row{
@@ -176,7 +174,7 @@ h4+p{
   }
     @media screen and (max-width:600px){
       .flexbox-column,.flexbox-row{
-        flex-direction:column;
+        flex-direction:row;
       }
     }
     a[class="aktuelleSeite"]{
