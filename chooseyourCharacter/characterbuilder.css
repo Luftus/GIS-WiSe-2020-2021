@@ -1,0 +1,45 @@
+.createlabel{
+    border: 0.25em outset black;
+    border-radius: 2.5em;
+    font-size: 1.25em;
+    text-align:left;
+    position:fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Nerko One', cursive;
+
+}
+.aussuchenDeclaration{
+    font-family: 'Nerko One', cursive;
+    border: 0.25em outset black;
+    border-radius: 2.5em;
+    font-size: 1.25em;
+    text-align:center;
+    font-size: 1.25em;
+    
+}
+.flexbox-untereinander{
+    display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.flexbox-untereinander > div {
+    width: 400px;
+    margin: 10px;
+    line-height: 75px;
+    font-size: 15px;
+    right:100px;
+    
+  }
+  .link{
+    font-family: 'Nerko One', cursive;
+    border: 0.25em outset black;
+    border-radius: 2.5em;
+    font-size: 2.5em;
+    text-align:center;
+    
+    
+  }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+ <html lang="de">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Dokument</title>
+ <script src="scriptone.js"></script>
+ <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+</head>
+ </head>
+ <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+  
+        context.beginPath();
+        context.moveTo(100, 150);
+        context.lineTo(450, 50);
+        context.stroke();
+      </script>
+ </body>
+ 
+ </html>
