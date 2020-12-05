@@ -1,43 +1,43 @@
 let statusMessage = document.getElementById("message");
 
 function start(): void {
-  //Elemente binden
-  let firstElementRow = document.getElementById("firstChoice");
-  let secondElementRow = document.getElementById("secondChoice");
-  let thirdElementRow = document.getElementById("thirdChoice");
+  //Variablen auslesen die man braucht
+  let ersteAuswahl = document.getElementById("headSelection");
+  let zweiteAuswahl = document.getElementById("bodySelection");
+  let dritteAuswahl = document.getElementById("legsSelection");
+  //Zurück Button
+  let goBack = document.getElementById("zurAuswahlKnopf");
 
-  let backButton = document.getElementById("backBtn");
-
-  //LocalStorage auslesen
+  //LocalStorage Info
   let localStorageFirst = localStorage.getItem("first");
   let localStorageSecond = localStorage.getItem("second");
   let localStorageThird = localStorage.getItem("third");
 
-  //Zurück-Button: Weiterleitung zurück auf index.html
-  backButton.addEventListener("click", () => {
+  //Zurück-Button: Weiterleitung zurück auf start.html
+  goBack.addEventListener("click", () => {
     localStorage.clear();
-    window.location.replace("index.html");
+    window.location.replace("start.html");
   });
 
-  //Fehlerfall - etwas im LocalStorage fehlt
+  //Wenn was fehlen sollte wieder in den Start, ansonsten 
   if (!localStorageFirst || !localStorageSecond || !localStorageThird) {
-    window.location.replace("index.html");
+    window.location.replace("start.html");
   } else {
-    //Top-Image erzeugen und mit LocalStorage-Daten füllen
+    //Erstes Bild setzen und appenden 
     let imgFirst = document.createElement("img");
     imgFirst.setAttribute("src", localStorageFirst);
-    firstElementRow.appendChild(imgFirst);
+    ersteAuswahl.appendChild(imgFirst);
 
-    //Middle-Image erzeugen und mit LocalStorage-Daten füllen
+    //zweites Bild setzen und appenden 
     let imgSecond = document.createElement("img");
     imgSecond.setAttribute("src", localStorageSecond);
-    secondElementRow.appendChild(imgSecond);
+    zweiteAuswahl.appendChild(imgSecond);
 
-    //Bottom-Image erzeugen und mit LocalStorage-Daten füllen
+    //drittes  Bild setzen und appenden 
     let imgThird = document.createElement("img"); //<img>
-    imgThird.setAttribute("src", localStorageThird); //<img src="img/1.png">
-    thirdElementRow.appendChild(imgThird); //<div id="row"> <img src="img/1.png"> </div>
-
+    imgThird.setAttribute("src", localStorageThird); //<img src="img/head1.jpg"> beispielsweise
+    dritteAuswahl.appendChild(imgThird); //<div id="row"> <img src="head1.jpg"> </div> beispielsweise
+    //"Server" für das displayen der aufgabe, base url mit dem query string, local storage info
     let baseUrl = "https://gis-communication.herokuapp.com";
     let query: URLSearchParams = new URLSearchParams(localStorage);
     baseUrl = baseUrl + "?" + query.toString();
@@ -51,11 +51,11 @@ function start(): void {
           displayMessage("error", result.error);
         }
 
-      }
+      });
     });
   }
 }
-
+// Error Message/normales Element
 function displayMessage(type: string, message: string): void {
   if (type === "error") {
     statusMessage.innerHTML = `<span class="error">${message}</span>`;
@@ -64,5 +64,4 @@ function displayMessage(type: string, message: string): void {
     statusMessage.innerHTML = `<span>${message}</span>`;
   }
 }
-
 start();

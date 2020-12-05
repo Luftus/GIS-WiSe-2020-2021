@@ -1,0 +1,5 @@
+{
+  "headSelection": ["img/Head1.jpg", "img/Head2.jpg", "img/Head3.jpg" ],
+  "bodySelection": ["img/Body1.jpg", "img/Body2.jpg", "img/Body3.jpg" ],
+  "legsSelection": ["img/Legs1.jpg", "img/Legs2.jpg", "img/Legs3.jpg" ]
+}

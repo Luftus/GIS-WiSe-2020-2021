@@ -1,30 +1,14 @@
-interface JsonCharacter {
-    firstChoicePath: string[];
-    secondChoicePath: string[];
-    thirdChoicePath: string[];
-}
-
 export default class CreateYourCharacter {
-    private messageElement: HTMLElement;
-    private choiceRow: HTMLElement;
-
-    private submitButton: HTMLElement;
-
-    private selected: string;
-
-    private siteInfo: string;
-
-
-    constructor(data: JsonCharacter) {
-        let hiddenInputSite = document.getElementById("site_info");
-        this.siteInfo = hiddenInputSite.getAttribute("value");
+    //Soll dem User helfen zu zeigen wo er ist, Erste Seite "first" etc
+    constructor(data) {
+        let versteckteEingabe = document.getElementById("site_info");
+        this.siteInfo = versteckteEingabe.getAttribute("value");
         //alle html elemente auslesen die es gibt
         this.initHtml();
         //bilder erzeugen
-        this.init(data)
+        this.init(data);
     }
-
-    private next(): void {
+    next() {
         switch (this.siteInfo) {
             case "first":
                 window.location.replace("index_body.html");
@@ -36,62 +20,56 @@ export default class CreateYourCharacter {
                 window.location.replace("character.html");
                 break;
         }
-
     }
-
-    private initHtml(): void {
+    initHtml() {
         this.messageElement = document.getElementById("message");
         this.submitButton = document.getElementById("submitChoice");
-
+        //Soll Info übermitteln wo sich der USer befindet, auf der start.html dann headselection etc
         switch (this.siteInfo) {
             case "first":
-                this.choiceRow = document.getElementById("firstChoice");
+                this.choiceRow = document.getElementById("headSelection");
                 break;
             case "second":
-                this.choiceRow = document.getElementById("secondChoice");
+                this.choiceRow = document.getElementById("bodySelection");
                 break;
             case "third":
-                this.choiceRow = document.getElementById("thirdChoice");
+                this.choiceRow = document.getElementById("legsSelection");
                 break;
         }
-
+        // Sorgt dafür das der User nicht weiter kann, solange er etwas nicht angeklickt hat
         this.submitButton.addEventListener("click", () => {
             if (!this.selected) {
                 this.error("Es ist nichts ausgewählt.");
             }
             else {
-                //erfolgsfall - die selektion kann gespeichert werden (localStorage)
-                this.saveSelected();
-                //weiterleitung auf die neue Seite
+                this.saveSelected(); //speicherung Wahl
                 this.next();
             }
         });
     }
-
-    private saveSelected(): void {
+    saveSelected() {
         localStorage.setItem(this.siteInfo, this.selected);
     }
-
-    private init(data: JsonCharacter): void {
-        //check ob die json-Daten gültig sind
-        if (data.firstChoicePath.length === 0 || data.secondChoicePath.length === 0 || data.thirdChoicePath.length === 0) {
+    init(data) {
+        //check ob die json-Daten gültig sind, wenn nicht Nachricht, else gibt die Bilder aus 
+        if (data.headSelection.length === 0 || data.bodySelection.length === 0 || data.legsSelection.length === 0) {
             this.error("Die übergebenen Daten sind ungültig");
         }
         else {
-            let sourceArray: string[];
+            let sourceArray;
             switch (this.siteInfo) {
                 case "first":
-                    sourceArray = data.firstChoicePath;
+                    sourceArray = data.headSelection;
                     break;
                 case "second":
-                    sourceArray = data.secondChoicePath;
+                    sourceArray = data.bodySelection;
                     break;
                 case "third":
-                    sourceArray = data.thirdChoicePath;
+                    sourceArray = data.legsSelection;
                     break;
             }
-            //iteration über die json-Daten für den Körper
-            sourceArray.forEach((src: string) => {
+            // Bildererzeugung für das Array, wenn ein Bild angeklickt wird, wird es der select funktion unten weitergegeben
+            sourceArray.forEach((src) => {
                 let img = document.createElement("img");
                 img.setAttribute("src", src);
                 img.addEventListener("click", () => {
@@ -101,13 +79,11 @@ export default class CreateYourCharacter {
             });
         }
     }
-
-    private error(message: string): void {
+    error(message) {
         this.messageElement.innerHTML = message;
     }
-
-    private select(imageSrc: string, imgElem: Element, rowElem: Element): void {
-        //die selected Klasse von jedem Element der row entfernen
+    // Auswahl fürs Auswählen, removed schon ausgewählte Elemente 
+    select(imageSrc, imgElem, rowElem) {
         let children = rowElem.children;
         for (var i = 0; i < children.length; i++) {
             let tableChild = children[i];
@@ -116,6 +92,5 @@ export default class CreateYourCharacter {
         this.selected = imageSrc;
         imgElem.classList.add("selected");
     }
-
 }
-
+//# sourceMappingURL=CreateYourCharacter.js.map
