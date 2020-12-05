@@ -1,0 +1,6 @@
+{
+    "firstChoicePath": ["head1.jpg", "head2.jpg", "head3.jpg"],
+    "secondChoicePath": ["body1.jpg", "body2.jpg", "body3.jpg"],
+    "thirdChoicePath": ["legs1.jpg", "legs2.jpg","legs3.jpg" ]
+  }
+  

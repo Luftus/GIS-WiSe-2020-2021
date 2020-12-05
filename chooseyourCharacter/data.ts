@@ -1,90 +1,121 @@
-// Gesichter
-let headOne: Auswahl = {
-    groeße: "30px" ,
-    bild: "head1.JPG" ,
-    name: "headone" 
-};
-
-let headTwo: Auswahl = {
-    groeße: "30px" ,
-    bild: "head2.JPG" ,
-    name: "headtwo" 
-};
-
-let headThree: Auswahl = {
-    groeße: "30px" ,
-    bild: "head3.JPG" ,
-    name: "headthree" 
-};
-// Körper
-let bodyOne: Auswahl = {
-    groeße: "30px" ,
-    bild: "body1.JPG" ,
-    name: "bodyOne" 
-};
-
-let bodyTwo: Auswahl = {
-    groeße: "30px" ,
-    bild: "body2.JPG" ,
-    name: "bodyTwo" 
-};
-
-let bodyThree: Auswahl = {
-    groeße: "30px" ,
-    bild: "body3.JPG" ,
-    name: "bodyThree" 
-};
-
-// Beine
-let legsOne: Auswahl = {
-    groeße: "30px" ,
-    bild: "legs1.JPG" ,
-    name: "legsOne" 
-};
-
-let legsTwo: Auswahl = {
-    groeße: "30px" ,
-    bild: "legs2.JPG" ,
-    name: "legsTwo" 
-};
-
-let legsThree: Auswahl = {
-    groeße: "30px" ,
-    bild: "legs3.JPG" ,
-    name: "legsThree" 
-};
-
-let head: Auswahl[] = [headOne, headTwo, headThree];
-let body: Auswahl[] = [bodyOne, bodyTwo, bodyThree];
-let legs: Auswahl[] = [legsOne, legsTwo, legsThree];
-
-// Interface damit alles gesamt ausgegeben wird
-
-let gesamt: CompletedCharacter = {
-    head: [headOne, headTwo, headThree],
-    body: [bodyOne, bodyTwo, bodyThree],
-    legs: [legsOne, legsTwo, legsThree]
-}; 
-
-interface Auswahl {
-groeße: string;
-bild: string;
-name: string;
+interface JsonCharacter {
+    firstChoicePath: string[];
+    secondChoicePath: string[];
+    thirdChoicePath: string[];
 }
 
-interface CompletedCharacter {
-    head: Auswahl[];
-    body: Auswahl[];
-    legs: Auswahl[];
+export default class CreateYourCharacter {
+    private messageElement: HTMLElement;
+    private choiceRow: HTMLElement;
+
+    private submitButton: HTMLElement;
+
+    private selected: string;
+
+    private siteInfo: string;
+
+
+    constructor(data: JsonCharacter) {
+        let hiddenInputSite = document.getElementById("site_info");
+        this.siteInfo = hiddenInputSite.getAttribute("value");
+        //alle html elemente auslesen die es gibt
+        this.initHtml();
+        //bilder erzeugen
+        this.init(data)
+    }
+
+    private next(): void {
+        switch (this.siteInfo) {
+            case "first":
+                window.location.replace("index_body.html");
+                break;
+            case "second":
+                window.location.replace("index_legs.html");
+                break;
+            case "third":
+                window.location.replace("character.html");
+                break;
+        }
+
+    }
+
+    private initHtml(): void {
+        this.messageElement = document.getElementById("message");
+        this.submitButton = document.getElementById("submitChoice");
+
+        switch (this.siteInfo) {
+            case "first":
+                this.choiceRow = document.getElementById("firstChoice");
+                break;
+            case "second":
+                this.choiceRow = document.getElementById("secondChoice");
+                break;
+            case "third":
+                this.choiceRow = document.getElementById("thirdChoice");
+                break;
+        }
+
+        this.submitButton.addEventListener("click", () => {
+            if (!this.selected) {
+                this.error("Es ist nichts ausgewählt.");
+            }
+            else {
+                //erfolgsfall - die selektion kann gespeichert werden (localStorage)
+                this.saveSelected();
+                //weiterleitung auf die neue Seite
+                this.next();
+            }
+        });
+    }
+
+    private saveSelected(): void {
+        localStorage.setItem(this.siteInfo, this.selected);
+    }
+
+    private init(data: JsonCharacter): void {
+        //check ob die json-Daten gültig sind
+        if (data.firstChoicePath.length === 0 || data.secondChoicePath.length === 0 || data.thirdChoicePath.length === 0) {
+            this.error("Die übergebenen Daten sind ungültig");
+        }
+        else {
+            let sourceArray: string[];
+            switch (this.siteInfo) {
+                case "first":
+                    sourceArray = data.firstChoicePath;
+                    break;
+                case "second":
+                    sourceArray = data.secondChoicePath;
+                    break;
+                case "third":
+                    sourceArray = data.thirdChoicePath;
+                    break;
+            }
+            //iteration über die json-Daten für den Körper
+            sourceArray.forEach((src: string) => {
+                let img = document.createElement("img");
+                img.setAttribute("src", src);
+                img.addEventListener("click", () => {
+                    this.select(src, img, this.choiceRow);
+                });
+                this.choiceRow.appendChild(img);
+            });
+        }
+    }
+
+    private error(message: string): void {
+        this.messageElement.innerHTML = message;
+    }
+
+    private select(imageSrc: string, imgElem: Element, rowElem: Element): void {
+        //die selected Klasse von jedem Element der row entfernen
+        let children = rowElem.children;
+        for (var i = 0; i < children.length; i++) {
+            let tableChild = children[i];
+            tableChild.classList.remove("selected");
+        }
+        this.selected = imageSrc;
+        imgElem.classList.add("selected");
+    }
 
 }
-
-
-
-
-
-
-
-
-
 

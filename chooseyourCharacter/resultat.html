@@ -1,30 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="characterbuilder.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charakter-Erstellung</title>
+    <meta charset="UTF-8"/>
+    <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
-    <script src="data.js"></script>
-    <title>Legs</title>
 </head>
 <body>
-    <div class="flexbox-untereinander"> 
-    <header>
-        <div class="createlabel">
-            <h1> Build your character</h1>   
-    </div> 
-    </header>
-    <div class="aussuchenDeclaration">
-        <h2> So sieht dein Endresultat aus </h2>
-    </div>
-    <div>
-        <p>Hier kommt die Scriptkacke rein</p>
-    </div>
-    <div class="link">
-        <a href="head.html"> Try again retard -></a>
-    </div>
+<h1>Charakter-Erstellung - Zusammenfassung</h1>
+<div id="main">
+    <div class="row" id="firstChoice"></div>
+    <div class="row" id="secondChoice"></div>
+    <div class="row" id="thirdChoice"></div>
+    <span id="message"></span>
+    <button id="backBtn">Zurück zur Auswahl</button>
 </div>
-    
+<script src="./endausgabe.js"></script>
 </body>
 </html>
