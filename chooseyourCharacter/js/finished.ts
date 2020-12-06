@@ -9,9 +9,9 @@ function start(): void {
   let goBack = document.getElementById("zurAuswahlKnopf");
 
   //LocalStorage Info
-  let localStorageFirst = localStorage.getItem("first");
-  let localStorageSecond = localStorage.getItem("second");
-  let localStorageThird = localStorage.getItem("third");
+  let localStorageFirst: string = localStorage.getItem("first");
+  let localStorageSecond: string = localStorage.getItem("second");
+  let localStorageThird: string = localStorage.getItem("third");
 
   //Zurück-Button: Weiterleitung zurück auf start.html
   goBack.addEventListener("click", () => {
