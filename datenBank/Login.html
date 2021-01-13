@@ -1,0 +1,39 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+      <h1>Login</h1>
+  </head>
+  <body>
+    <form action="action_page.php" method="post">
+     
+      
+        <div class="container">
+          <label for="vorname"><b>Vorname</b></label>
+          <input type="text" placeholder="Enter Vorname" name="vorname" required>
+
+          <label for="nachname"><b>Nachname</b></label>
+          <input type="text" placeholder="Enter Nachname" name="nachname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <label for="email"><b>E-mail</b></label>
+          <input type="text" placeholder="Enter E-mail" name="email" required>
+      
+         
+          
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="submit" class="serverabfrage">Datenanfrage an den Server</button>
+        </div>
+        <div> <a href="datenbankAnfrage.html"> Anfrage an den Server der alle Namen aller User in der Datenbank dem Client zurückgibt</a></div>
+        <div> <a href="ueberpruefung.html"> Hier geht es zu der Passwort+Email Abfrage</a></div>
+      </form> 
+      
+  </body>
+  </html>

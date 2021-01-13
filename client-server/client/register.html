@@ -1,0 +1,34 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Register</title>
+  </head>
+  <body>
+    <form action="http://localhost:8100/register" method="GET" id="form_register">
+
+        <div class="container">
+          <label for="vorname"><b>Vorname</b></label>
+          <input type="text" placeholder="Enter Vorname" id="vorname" name="vorname" required>
+
+          <label for="nachname"><b>Nachname</b></label>
+          <input type="text" placeholder="Enter Nachname" id="nachname" name="nachname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+          <label for="email"><b>E-mail</b></label>
+          <input type="text" placeholder="Enter E-mail" id="email" name="email" required>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="submit" class="serverabfrage" id="form_btn">Datenanfrage an den Server</button>
+        </div>
+        <div> <a href="http://localhost:8100/userlist"> Anfrage an den Server der alle Namen aller User in der Datenbank dem Client zurückgibt</a></div>
+        <div> <a href="login.html"> Hier geht es zu der Passwort+Email Abfrage</a></div>
+      </form>
+    <script src="index.js"></script>
+  </body>
+  </html>
